@@ -1,0 +1,18 @@
+﻿namespace Core.Persistance.Dynamic
+{
+    public class Sort
+    {
+        public string Field { get; set; }
+        public string Dir { get; set; } // acs mi ? desc mi
+
+        public Sort()
+        {
+            Field = string.Empty; Dir = string.Empty; 
+        }
+
+        public Sort(string field, string dir)
+        {
+            Field = field; Dir = dir; 
+        }
+    }
+}
