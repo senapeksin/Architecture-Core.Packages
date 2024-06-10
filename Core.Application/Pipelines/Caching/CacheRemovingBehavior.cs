@@ -32,7 +32,8 @@ public class CacheRemovingBehavior<TRequest, TResponse> : IPipelineBehavior<TReq
             byte[]? cachedGroup = await _cache.GetAsync(request.CacheGroupKey,cancellationToken);
             if (cachedGroup != null)
             {
-                HashSet<string> keysInGroup = JsonSerializer.Deserialize<HashSet<string>>(Encoding.Default.GetString(cachedGroup))!; // listeye çevir 
+                // cachedeki listeyi bul. Deserialize yap ve her birini tek tek sil.
+                HashSet<string> keysInGroup = JsonSerializer.Deserialize<HashSet<string>>(Encoding.Default.GetString(cachedGroup))!;  
                 foreach (string key in keysInGroup)
                 {
                     await _cache.RemoveAsync(key,cancellationToken);
