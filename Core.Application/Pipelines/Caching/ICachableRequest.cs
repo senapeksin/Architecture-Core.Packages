@@ -3,6 +3,7 @@
 public interface ICachableRequest
 {
     string CacheKey { get; }
-    bool ByPassCache { get; }
-    TimeSpan? SlidingExpiration {  get; }
+    bool ByPassCache { get; } 
+    string? CacheGroupKey { get; }
+    TimeSpan? SlidingExpiration { get; }
 }
