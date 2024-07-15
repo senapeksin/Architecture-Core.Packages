@@ -1,4 +1,4 @@
-﻿,using Core.Persistance.Repositories;
+﻿using Core.Persistance.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ public class OperationClaim : Entity<int>
 {
     public string Name { get; set; }
 
-    public virtual ICollection<UserOperationClaim> OperationClaims { get; set; } = null;
+    public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = null;
 
     public OperationClaim()
     {
